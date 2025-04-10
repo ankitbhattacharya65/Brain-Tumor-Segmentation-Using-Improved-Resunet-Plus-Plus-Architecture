@@ -82,6 +82,145 @@ After preprocessing, we structured the dataset into three **binary segmentation 
 </p>
 <p align="center"><b>Pre-processed images for ET</b></p>
 
+## 🧠 3.3 Proposed Architecture
+
+We have used an **improved version of ResUNet++ architecture** to train our model.  
+ResUNet++ is a deep learning architecture specifically designed for biomedical image segmentation tasks like **brain tumor segmentation**. It builds upon the standard U-Net by incorporating:
+
+- ✅ Residual Blocks  
+- ✅ Squeeze and Excite Blocks  
+- ✅ Atrous Spatial Pyramid Pooling (ASPP)  
+- ✅ Attention Mechanisms  
+
+These components help the model to learn more complex patterns and focus on important features, making it more **efficient and accurate** than the basic ResUNet.
+
+<p align="center">
+  <img src="Fig%205%20Improved%20ResUNet++%20Architecture.PNG" alt="Improved ResUNet++ Architecture" width="800"/>
+</p>
+<p align="center"><b>Fig 5: Improved ResUNet++ Architecture</b></p>
+
+---
+
+### 🔁 Encoder
+
+The input image (3-channel 2D image of size **128×128×3**) is processed through the following steps:
+
+1. **Stem Block**
+2. **Squeeze and Excite Block**
+3. Repeated **3 times**:  
+   - Residual Block  
+   - Squeeze and Excite Block
+
+This pattern extracts and refines features at multiple levels. After each residual block:
+- 🟢 **Spatial dimensions are halved** (→ 64, 32, 16)
+- 🟢 **Channels are doubled** (→ 32, 64, 128)
+
+---
+
+### 🌉 Bridge (ASPP Block)
+
+The encoder output is passed to an **ASPP (Atrous Spatial Pyramid Pooling)** block. This:
+- Enlarges the receptive field
+- Captures **multi-scale context**
+- Output size: **16×16×256**
+
+---
+
+### 🔁 Decoder
+
+The decoder reconstructs the segmentation map using:
+
+- Attention Block  
+- Upsampling  
+- Concatenation with encoder features  
+- Residual Block  
+- Squeeze and Excite Block
+
+This is repeated **3 times**, increasing spatial resolution: **(16 → 32 → 64 → 128)**.  
+Finally:
+- Another **ASPP block** is applied
+- Followed by **1×1 convolution** (1 filter)
+- Result: **128×128×1 segmentation map**
+- A **sigmoid activation** ensures output values between **0 and 1**
+
+---
+
+## 🧩 3.4 Different Blocks Used in the Architecture
+
+### 🔷 Stem Block
+<p align="center">
+  <img src="Fig%206%20Stem%20Block.png" alt="Stem Block" width="500"/>
+</p>
+<p align="center"><b>Fig 6: Stem Block</b></p>
+
+- First 2 convolutions: `3×3`, 32 filters, stride = 1
+- Batch Normalization + ReLU
+- A skip connection via `1×1 convolution`
+- Output = sum of convolution path and skip path  
+  ➕ Helps capture features **more precisely**
+
+---
+
+### 🔷 Squeeze and Excite (SE) Block
+<p align="center">
+  <img src="Fig%207%20Squeeze%20and%20Excite%20Block.png" alt="Squeeze and Excite Block" width="500"/>
+</p>
+<p align="center"><b>Fig 7: Squeeze and Excite Block</b></p>
+
+- Uses **Global Average Pooling** for "squeeze"
+- Followed by 2 dense layers to "excite"
+- Learns **channel-wise relationships**
+- Applies learned weights to recalibrate channels via multiplication
+
+---
+
+### 🔷 Residual Block
+<p align="center">
+  <img src="Fig%208%20Residual%20Block.png" alt="Residual Block" width="500"/>
+</p>
+<p align="center"><b>Fig 8: Residual Block</b></p>
+
+- 4 stacked layers: BatchNorm → ReLU → Conv
+- Identity skip connection via `1x1 convolution`
+- Helps with:
+  - ⚡ Faster training
+  - 💡 Better gradient flow
+  - 🧠 Efficient learning
+
+---
+
+### 🔷 ASPP Block (Atrous Spatial Pyramid Pooling)
+<p align="center">
+  <img src="Fig%209%20ASPP%20Block.png" alt="ASPP Block" width="500"/>
+</p>
+<p align="center"><b>Fig 9: ASPP Block</b></p>
+
+- Extracts multi-scale features using:
+  - 3 dilated convolutions with rates: 6, 12, 18
+  - 1 regular convolution
+- Outputs are merged and passed through a `1×1 convolution`
+- Captures both **local** and **global** contexts  
+
+---
+
+### 🔷 Attention Block
+<p align="center">
+  <img src="Fig%2010%20Attention%20Block.png" alt="Attention Block" width="500"/>
+</p>
+<p align="center"><b>Fig 10: Attention Block</b></p>
+
+- Takes input from:
+  - Decoder (feature info)
+  - Encoder (spatial info)
+- Applies:
+  - BatchNorm → ReLU → Conv → MaxPooling (encoder side)
+  - BatchNorm → ReLU → Conv (decoder side)
+- Outputs are combined and enhanced  
+- Focuses model attention on **relevant regions**
+
+---
+
+Let me know if you'd like to break this into separate sections or convert into a notebook format!
 
 
 
