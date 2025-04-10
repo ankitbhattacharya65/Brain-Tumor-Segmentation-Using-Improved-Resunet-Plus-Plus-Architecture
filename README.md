@@ -280,13 +280,16 @@ The confusion matrix below provides an overview of the classification performanc
 The model was tested on different tumor regions using the improved ResUNet++ architecture. Below are the predicted segmentation maps visualized for each tumor subregion.
 
 - **Prediction for Whole Tumor (WT)**  
-  ![Prediction WT](Prediction%20for%20Whole%20Tumor%20(WT).PNG)
+  ![Prediction WT](Fig%2017%20Prediction%20for%20Whole%20Tumor%20(WT).PNG)
 
 - **Prediction for Tumor Core (TC)**  
-  ![Prediction TC](Prediction%20for%20Tumor%20Core%20(TC).PNG)
+  ![Prediction TC](Fig%2018%20Prediction%20for%20Tumor%20Core%20(TC).PNG)
 
 - **Prediction for Enhancing Tumor (ET)**  
-  ![Prediction ET](Prediction%20for%20Enhancing%20Tumor%20(ET).PNG)
+  ![Prediction ET](Fig%2019%20Prediction%20for%20Enhancing%20Tumor%20(ET).PNG)
+
+---
+
 
 ---
 
