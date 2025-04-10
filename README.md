@@ -82,7 +82,7 @@ After preprocessing, we structured the dataset into three **binary segmentation 
 </p>
 <p align="center"><b>Pre-processed images for ET</b></p>
 
-## 🧠 3.3 Proposed Architecture
+## 🧠 Proposed Architecture
 
 We have used an **improved version of ResUNet++ architecture** to train our model.  
 ResUNet++ is a deep learning architecture specifically designed for biomedical image segmentation tasks like **brain tumor segmentation**. It builds upon the standard U-Net by incorporating:
@@ -145,13 +145,13 @@ Finally:
 
 ---
 
-## 🧩 3.4 Different Blocks Used in the Architecture
+## 🧩 Different Blocks Used in the Architecture
 
 ### 🔷 Stem Block
 <p align="center">
   <img src="Fig%206%20Stem%20Block.png" alt="Stem Block" width="500"/>
 </p>
-<p align="center"><b>Fig 6: Stem Block</b></p>
+<p align="center"><b>Stem Block</b></p>
 
 - First 2 convolutions: `3×3`, 32 filters, stride = 1
 - Batch Normalization + ReLU
@@ -165,7 +165,7 @@ Finally:
 <p align="center">
   <img src="Fig%207%20Squeeze%20and%20Excite%20Block.png" alt="Squeeze and Excite Block" width="500"/>
 </p>
-<p align="center"><b>Fig 7: Squeeze and Excite Block</b></p>
+<p align="center"><b>Squeeze and Excite Block</b></p>
 
 - Uses **Global Average Pooling** for "squeeze"
 - Followed by 2 dense layers to "excite"
@@ -178,7 +178,7 @@ Finally:
 <p align="center">
   <img src="Fig%208%20Residual%20Block.png" alt="Residual Block" width="500"/>
 </p>
-<p align="center"><b>Fig 8: Residual Block</b></p>
+<p align="center"><b>Residual Block</b></p>
 
 - 4 stacked layers: BatchNorm → ReLU → Conv
 - Identity skip connection via `1x1 convolution`
@@ -193,7 +193,7 @@ Finally:
 <p align="center">
   <img src="Fig%209%20ASPP%20Block.png" alt="ASPP Block" width="500"/>
 </p>
-<p align="center"><b>Fig 9: ASPP Block</b></p>
+<p align="center"><b>ASPP Block</b></p>
 
 - Extracts multi-scale features using:
   - 3 dilated convolutions with rates: 6, 12, 18
@@ -207,7 +207,7 @@ Finally:
 <p align="center">
   <img src="Fig%2010%20Attention%20Block.png" alt="Attention Block" width="500"/>
 </p>
-<p align="center"><b>Fig 10: Attention Block</b></p>
+<p align="center"><b>Attention Block</b></p>
 
 - Takes input from:
   - Decoder (feature info)
@@ -220,7 +220,6 @@ Finally:
 
 ---
 
-Let me know if you'd like to break this into separate sections or convert into a notebook format!
 
 
 
