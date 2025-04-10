@@ -61,19 +61,11 @@ To reduce computational complexity, the original **3D MRI volumes** (240 × 240 
 - Masks were reshaped to **2D slices (128 × 128)** in alignment with the image slices.
 
 This preprocessing pipeline ensures the data is efficiently structured and normalized for optimal training of the 2D ResUNet++ architecture.
-## 🧠 MRI Slices & Preprocessed Samples
+<p align="center">
+  <img src="Fig%201-Showing%20a%20random%20slice%20of%20T1CE,T2,T2-FLAIR%20%26%20mask.PNG" alt="Random Slice of T1CE, T2, T2-FLAIR & Mask" width="500"/>
+</p>
+<p align="center"><b>Showing a random slice of T1CE, T2, T2-FLAIR & mask</b></p>
 
-### 📌 Fig 1: Showing a random slice of T1CE, T2, T2-FLAIR & Mask
-![Fig 1](Fig 1-Showing a random slice of T1CE,T2,T2-FLAIR & mask.PNG)
-
-### 🧪 Fig 2: Pre-processed images for Whole Tumor (WT)
-![Fig 2](./Fig%202%20Pre-processed%20images%20For%20WT.png)
-
-### 🧪 Fig 3: Pre-processed images for Tumor Core (TC)
-![Fig 3](./Fig%203%20Pre-processed%20images%20For%20TC.png)
-
-### 🧪 Fig 4: Pre-processed images for Enhancing Tumor (ET)
-![Fig 4](./Fig%204%20Pre-processed%20images%20for%20ET.png)
 
 
 
