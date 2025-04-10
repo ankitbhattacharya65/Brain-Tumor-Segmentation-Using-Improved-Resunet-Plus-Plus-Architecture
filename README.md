@@ -219,6 +219,49 @@ Finally:
 - Focuses model attention on **relevant regions**
 
 ---
+## 🔧 Training and Evaluation
+
+We have trained our model using an **improved version of the ResUNet++ architecture**, as described in the previous section. This architecture is particularly suited for biomedical image segmentation tasks due to its enhanced feature extraction and efficient learning capabilities.
+
+### 📊 Dataset Splitting  
+We utilized **75% of the dataset for training** and the remaining **25% for evaluation**. The dataset included **2767 images** for each of the following MRI modalities and their corresponding masks:
+- **T1CE**
+- **T2**
+- **T2 FLAIR**
+- **Ground Truth Mask**
+
+### ⚙️ Training Configuration
+- **Optimizer**: Nadam (Nesterov-accelerated Adaptive Moment Estimation)  
+- **Loss Function**: Binary Dice Loss (suitable for binary segmentation tasks)  
+- **Batch Size**: 16  
+- **Epochs Trained**:
+  - **Whole Tumor (WT)**: 60 epochs
+  - **Tumor Core (TC)**: 50 epochs
+  - **Enhancing Tumor (ET)**: 69 epochs
+
+Training was halted at these points due to:
+- **Onset of Overfitting**
+- **Rising Computational Complexity**
+
+### 📈 Evaluation Metrics
+To comprehensively evaluate the model’s performance, we employed the following metrics:
+- **Dice Score**
+- **Mean Intersection over Union (IoU)**
+- **IoU Score**
+- **F1 Score**
+- **Recall**
+- **Precision**
+- **Sensitivity**
+- **Specificity**
+
+The table below summarizes the results of model evaluation across the three tumor subregions:
+
+| Tumor Subregion     | Loss   | Dice Score | IOU Score | Mean IOU | F1 Score | Recall | Precision | Sensitivity | Specificity |
+|---------------------|--------|------------|-----------|-----------|----------|--------|------------|--------------|-------------|
+| Whole Tumor (WT)    | 0.0508 | 0.9492     | 0.9035    | 0.9507    | 0.9492   | 0.9509 | 0.9501     | 0.9494       | 0.9987      |
+| Tumor Core (TC)     | 0.0699 | 0.9299     | 0.8693    | 0.9421    | 0.9298   | 0.9352 | 0.9465     | 0.9137       | 0.9994      |
+| Enhancing Tumor (ET)| 0.0951 | 0.9050     | 0.8273    | 0.9128    | 0.9050   | 0.9113 | 0.9064     | 0.9083       | 0.9995      |
+
 
 
 
