@@ -278,7 +278,7 @@ After training the model, we performed predictions on the test dataset for all t
 ### 📊 Confusion Matrix
 
 <p align="center">
-  <img src="confusion%20matrix.jpg" alt="Confusion Matrix" width="500"/>
+  <img src="images/confusion%20matrix.jpg" alt="Confusion Matrix" width="500"/>
 </p>
 <p align="center"><b>Confusion Matrix showing classification performance.</b></p>
 
@@ -289,17 +289,17 @@ After training the model, we performed predictions on the test dataset for all t
 The model was tested on different tumor regions using the improved ResUNet++ architecture. Below are the predicted segmentation maps visualized for each tumor subregion.
 
 <p align="center">
-  <img src="Fig%2017%20Prediction%20for%20Whole%20Tumor%20(WT).PNG" alt="Prediction WT" width="500"/>
+  <img src="images/Fig%2017%20Prediction%20for%20Whole%20Tumor%20(WT).PNG" alt="Prediction WT" width="500"/>
 </p>
 <p align="center"><b>Predicted segmentation map for Whole Tumor (WT).</b></p>
 
 <p align="center">
-  <img src="Fig%2018%20Prediction%20for%20Tumor%20Core%20(TC).PNG" alt="Prediction TC" width="500"/>
+  <img src="images/Fig%2018%20Prediction%20for%20Tumor%20Core%20(TC).PNG" alt="Prediction TC" width="500"/>
 </p>
 <p align="center"><b>Predicted segmentation map for Tumor Core (TC).</b></p>
 
 <p align="center">
-  <img src="Fig%2019%20Prediction%20for%20Enhancing%20Tumor%20(ET).PNG" alt="Prediction ET" width="500"/>
+  <img src="images/Fig%2019%20Prediction%20for%20Enhancing%20Tumor%20(ET).PNG" alt="Prediction ET" width="500"/>
 </p>
 <p align="center"><b>Predicted segmentation map for Enhancing Tumor (ET).</b></p>
 
@@ -310,19 +310,16 @@ The model was tested on different tumor regions using the improved ResUNet++ arc
 The ROC (Receiver Operating Characteristic) curves for each tumor subregion are shown below. These curves help evaluate the performance of the classification model by comparing true positive rates against false positive rates.
 
 <p align="center">
-  <img src="WT.jpeg" alt="ROC Curve WT" width="500"/>
+  <img src="images/WT.jpeg" alt="ROC Curve WT" width="500"/>
 </p>
 <p align="center"><b>ROC Curve for Whole Tumor (WT).</b></p>
 
 <p align="center">
-  <img src="CT.jpeg" alt="ROC Curve TC" width="500"/>
+  <img src="images/CT.jpeg" alt="ROC Curve TC" width="500"/>
 </p>
 <p align="center"><b>ROC Curve for Tumor Core (TC).</b></p>
 
 <p align="center">
-  <img src="ET.jpeg" alt="ROC Curve ET" width="500"/>
+  <img src="images/ET.jpeg" alt="ROC Curve ET" width="500"/>
 </p>
 <p align="center"><b>ROC Curve for Enhancing Tumor (ET).</b></p>
-
-
-
