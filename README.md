@@ -97,11 +97,12 @@ ResUNet++ is a deep learning architecture specifically designed for biomedical i
 These components help the model to learn more complex patterns and focus on important features, making it more **efficient and accurate** than the basic ResUNet.
 
 <p align="center">
-  <img src="Fig%205%20Improved%20ResUNet++%20Architecture.PNG" alt="Improved ResUNet++ Architecture" width="800"/>
+  <img src="images/Fig%205%20Improved%20ResUNet++%20Architecture.PNG" alt="Improved ResUNet++ Architecture" width="800"/>
 </p>
 <p align="center"><b>Fig 5: Improved ResUNet++ Architecture</b></p>
 
 ---
+
 
 ### 🔁 Encoder
 
@@ -151,9 +152,10 @@ Finally:
 
 ### 🔷 Stem Block
 <p align="center">
-  <img src="Fig%206%20Stem%20Block.png" alt="Stem Block" width="500"/>
+  <img src="images/Fig%206%20Stem%20Block.png" alt="Stem Block" width="500"/>
 </p>
 <p align="center"><b>Stem Block</b></p>
+
 
 - First 2 convolutions: `3×3`, 32 filters, stride = 1
 - Batch Normalization + ReLU
@@ -165,7 +167,7 @@ Finally:
 
 ### 🔷 Squeeze and Excite (SE) Block
 <p align="center">
-  <img src="Fig%207%20Squeeze%20and%20Excite%20Block.png" alt="Squeeze and Excite Block" width="500"/>
+  <img src="images/Fig%207%20Squeeze%20and%20Excite%20Block.png" alt="Squeeze and Excite Block" width="500"/>
 </p>
 <p align="center"><b>Squeeze and Excite Block</b></p>
 
@@ -177,8 +179,9 @@ Finally:
 ---
 
 ### 🔷 Residual Block
+
 <p align="center">
-  <img src="Fig%208%20Residual%20Block.png" alt="Residual Block" width="500"/>
+  <img src="images/Fig%208%20Residual%20Block.png" alt="Residual Block" width="500"/>
 </p>
 <p align="center"><b>Residual Block</b></p>
 
@@ -192,8 +195,9 @@ Finally:
 ---
 
 ### 🔷 ASPP Block (Atrous Spatial Pyramid Pooling)
+
 <p align="center">
-  <img src="Fig%209%20ASPP%20Block.png" alt="ASPP Block" width="500"/>
+  <img src="images/Fig%209%20ASPP%20Block.png" alt="ASPP Block" width="500"/>
 </p>
 <p align="center"><b>ASPP Block</b></p>
 
@@ -207,7 +211,7 @@ Finally:
 
 ### 🔷 Attention Block
 <p align="center">
-  <img src="Fig%2010%20Attention%20Block.png" alt="Attention Block" width="500"/>
+  <img src="images/Fig%2010%20Attention%20Block.png" alt="Attention Block" width="500"/>
 </p>
 <p align="center"><b>Attention Block</b></p>
 
