@@ -64,7 +64,7 @@ This preprocessing pipeline ensures the data is efficiently structured and norma
 ## 🧠 MRI Slices & Preprocessed Samples
 
 ### 📌 Fig 1: Showing a random slice of T1CE, T2, T2-FLAIR & Mask
-![Fig 1](./Fig%201-Showing%20a%20random%20slice%20of%20T1CE,T2,T2-FLAIR%20&%20mask.png)
+![Fig 1](Fig 1-Showing a random slice of T1CE,T2,T2-FLAIR & mask.PNG)
 
 ### 🧪 Fig 2: Pre-processed images for Whole Tumor (WT)
 ![Fig 2](./Fig%202%20Pre-processed%20images%20For%20WT.png)
