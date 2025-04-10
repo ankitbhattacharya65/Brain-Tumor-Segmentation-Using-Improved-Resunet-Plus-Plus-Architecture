@@ -67,9 +67,20 @@ To reduce computational complexity, the original **3D MRI volumes** (240 × 240 
 - Masks were reshaped to **2D slices (128 × 128)** in alignment with the image slices.
 
 After preprocessing, we structured the dataset into three **binary segmentation tasks** — each targeting a specific tumor region: **Whole Tumor (WT)**, **Tumor Core (TC)**, and **Enhancing Tumor (ET)**. This separation improves model focus and precision for each class. Below are the pre-processed images for each segmentation task:
+<p align="center">
+  <img src="Fig%202%20Pre-processed%20images%20For%20WT.PNG" alt="Pre-processed images For WT" width="500"/>
+</p>
+<p align="center"><b>Pre-processed images For WT</b></p>
 
 <p align="center">
-  <img src="Fig%202%20Pre-processed%20images%20For%20WT.PNG" alt="Pre-processed images For WT" width="500
+  <img src="Fig%203%20Pre-processed%20images%20For%20TC.PNG" alt="Pre-processed images For TC" width="500"/>
+</p>
+<p align="center"><b>Pre-processed images For TC</b></p>
+
+<p align="center">
+  <img src="Fig%204%20Pre-processed%20images%20for%20ET.PNG" alt="Pre-processed images for ET" width="500"/>
+</p>
+<p align="center"><b>Pre-processed images for ET</b></p>
 
 
 
