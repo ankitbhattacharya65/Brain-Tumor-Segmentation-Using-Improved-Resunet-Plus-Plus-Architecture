@@ -263,6 +263,45 @@ The table below summarizes the results of model evaluation across the three tumo
 | Enhancing Tumor (ET)| 0.0951 | 0.9050     | 0.8273    | 0.9128    | 0.9050   | 0.9113 | 0.9064     | 0.9083       | 0.9995      |
 
 
+## 🧪 Prediction and Evaluation
+
+After training the model, we performed predictions on the test dataset for all three tumor subregions — Whole Tumor (WT), Tumor Core (TC), and Enhancing Tumor (ET). The results show high accuracy and consistency with the ground truth, both visually and quantitatively.
+
+### 📊 Confusion Matrix
+
+The confusion matrix below provides an overview of the classification performance across all categories.
+
+![Confusion Matrix](confusion%20matrix.jpg)
+
+---
+
+### 🧠 Predicted Segmentation Maps
+
+The model was tested on different tumor regions using the improved ResUNet++ architecture. Below are the predicted segmentation maps visualized for each tumor subregion.
+
+- **Prediction for Whole Tumor (WT)**  
+  ![Prediction WT](Prediction%20for%20Whole%20Tumor%20(WT).PNG)
+
+- **Prediction for Tumor Core (TC)**  
+  ![Prediction TC](Prediction%20for%20Tumor%20Core%20(TC).PNG)
+
+- **Prediction for Enhancing Tumor (ET)**  
+  ![Prediction ET](Prediction%20for%20Enhancing%20Tumor%20(ET).PNG)
+
+---
+
+### 📈 ROC Curves
+
+The ROC (Receiver Operating Characteristic) curves for each tumor subregion are shown below. These curves help evaluate the performance of the classification model by comparing true positive rates against false positive rates.
+
+- **ROC Curve for Whole Tumor (WT)**  
+  ![ROC WT](WT.jpeg)
+
+- **ROC Curve for Tumor Core (TC)**  
+  ![ROC TC](TC.jpeg)
+
+- **ROC Curve for Enhancing Tumor (ET)**  
+  ![ROC ET](ET.jpeg)
 
 
 
