@@ -263,7 +263,7 @@ The table below summarizes the results of model evaluation across the three tumo
 | Enhancing Tumor (ET)| 0.0951 | 0.9050     | 0.8273    | 0.9128    | 0.9050   | 0.9113 | 0.9064     | 0.9083       | 0.9995      |
 
 
-## 🧪 Prediction and Evaluation
+## 🧪 Prediction, Evaluation & Visualization
 
 After training the model, we performed predictions on the test dataset for all three tumor subregions — Whole Tumor (WT), Tumor Core (TC), and Enhancing Tumor (ET). The results show high accuracy and consistency with the ground truth, both visually and quantitatively.
 
