@@ -301,7 +301,7 @@ The ROC (Receiver Operating Characteristic) curves for each tumor subregion are 
   ![ROC WT](WT.jpeg)
 
 - **ROC Curve for Tumor Core (TC)**  
-  ![ROC TC](TC.jpeg)
+  ![ROC TC](CT.jpeg)
 
 - **ROC Curve for Enhancing Tumor (ET)**  
   ![ROC ET](ET.jpeg)
