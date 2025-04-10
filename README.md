@@ -45,9 +45,10 @@ Each label contributes to the formation of three main binary segmentation tasks:
 To reduce computational complexity, the original **3D MRI volumes** (240 × 240 × 155) from the BraTS 2020 dataset are converted into **2D slices**. Each subject contains 5 `.nii` files — 4 input channels and 1 ground truth segmentation mask. We excluded the **T1 (native)** modality due to its limited tumor contrast, retaining **T1CE, T2, and FLAIR** modalities.
 
 <p align="center">
-  <img src="Fig%201-Showing%20a%20random%20slice%20of%20T1CE,T2,T2-FLAIR%20%26%20mask.PNG" alt="Random Slice of T1CE, T2, T2-FLAIR & Mask" width="500"/>
+  <img src="images/Fig%201-Showing%20a%20random%20slice%20of%20T1CE,T2,T2-FLAIR%20%26%20mask.PNG" alt="Random Slice of T1CE, T2, T2-FLAIR & Mask" width="500"/>
 </p>
 <p align="center"><b>Showing a random slice of T1CE, T2, T2-FLAIR & mask</b></p>
+
 
 ### 🔹 Input Preprocessing:
 - Extracted **10 representative 2D slices** per subject by fixing the slice index and iterating across the remaining dimensions.
@@ -68,19 +69,20 @@ To reduce computational complexity, the original **3D MRI volumes** (240 × 240 
 
 After preprocessing, we structured the dataset into three **binary segmentation tasks** — each targeting a specific tumor region: **Whole Tumor (WT)**, **Tumor Core (TC)**, and **Enhancing Tumor (ET)**. This separation improves model focus and precision for each class. Below are the pre-processed images for each segmentation task:
 <p align="center">
-  <img src="Fig%202%20Pre-processed%20images%20For%20WT.PNG" alt="Pre-processed images For WT" width="500"/>
+  <img src="images/Fig%202%20Pre-processed%20images%20For%20WT.PNG" alt="Pre-processed images For WT" width="500"/>
 </p>
 <p align="center"><b>Pre-processed images For WT</b></p>
 
 <p align="center">
-  <img src="Fig%203%20Pre-processed%20images%20For%20TC.PNG" alt="Pre-processed images For TC" width="500"/>
+  <img src="images/Fig%203%20Pre-processed%20images%20For%20TC.PNG" alt="Pre-processed images For TC" width="500"/>
 </p>
 <p align="center"><b>Pre-processed images For TC</b></p>
 
 <p align="center">
-  <img src="Fig%204%20Pre-processed%20images%20for%20ET.PNG" alt="Pre-processed images for ET" width="500"/>
+  <img src="images/Fig%204%20Pre-processed%20images%20for%20ET.PNG" alt="Pre-processed images for ET" width="500"/>
 </p>
 <p align="center"><b>Pre-processed images for ET</b></p>
+
 
 ## 🧠 Proposed Architecture
 
