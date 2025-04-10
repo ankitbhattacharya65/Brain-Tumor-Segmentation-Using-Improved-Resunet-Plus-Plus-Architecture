@@ -39,33 +39,38 @@ Each label contributes to the formation of three main binary segmentation tasks:
 > [https://www.med.upenn.edu/cbica/brats2020/data.html](https://www.med.upenn.edu/cbica/brats2020/data.html)
 
 
+
 ## 🧪 Preprocessing
 
-To reduce computational complexity, the original **3D MRI volumes** (240 × 240 × 155) from the BraTS 2020 dataset are converted into **2D slices**. Each subject contains 5 `.nii` files — 4 input channels and 1 ground truth segmentation mask. We excluded the **T1 (native)** modality due to its limited tumor contrast, retaining **T1CE, T2, and FLAIR** modalities.
+To enable efficient training and reduce the computational complexity of 3D MRI volumes, we convert the original scans into representative 2D slices. The BraTS 2020 dataset provides multimodal MRI data with segmentations for brain tumors. Below is a visualization of a randomly chosen slice from each modality and its corresponding mask.
 
-### 🔹 Input Preprocessing:
-- Extracted **10 representative 2D slices** per subject by fixing the slice index and iterating across the remaining dimensions.
-- Each slice was resized to **128 × 128** pixels.
-- **Normalization** was applied to each modality:  
-  `Normalized = (pixel - mean) / std`
-- Finally, the three channels (**T1CE, T2, FLAIR**) were **stacked** to form a single multi-channel 2D input.
-
-### 🔹 Mask Preprocessing:
-- Ground truth masks consist of:
-  - `1` → Necrotic/Non-enhancing Tumor Core (NCR/NET)
-  - `2` → Peritumoral Edema (ED)
-  - `4` → Enhancing Tumor (ET)
-  - `0` → Background
-  - `3` → Not used (no pixels contain label 3)
-- For **binary segmentation**, all non-zero labels were converted to `1` (tumor), preserving `0` for the background.
-- Masks were reshaped to **2D slices (128 × 128)** in alignment with the image slices.
-
-This preprocessing pipeline ensures the data is efficiently structured and normalized for optimal training of the 2D ResUNet++ architecture.
 <p align="center">
   <img src="Fig%201-Showing%20a%20random%20slice%20of%20T1CE,T2,T2-FLAIR%20%26%20mask.PNG" alt="Random Slice of T1CE, T2, T2-FLAIR & Mask" width="500"/>
 </p>
 <p align="center"><b>Showing a random slice of T1CE, T2, T2-FLAIR & mask</b></p>
 
+---
+
+### 🔹 Input Preprocessing:
+- The original 3D volumes (240 × 240 × 155) were **converted into 2D** by extracting 10 representative slices per subject.
+- We excluded the **T1 (native)** modality due to its lower tumor contrast.
+- Selected modalities: **T1CE, T2, and FLAIR**.
+- Each 2D slice was **resized to 128 × 128** pixels.
+- Applied **z-score normalization**:  
+  `Normalized = (pixel - mean) / std`
+- The three normalized modalities were **stacked** to form a multi-channel input.
+
+### 🔹 Mask Preprocessing:
+- Ground truth segmentation masks contained the following labels:
+  - `0` – Background
+  - `1` – Necrotic/Non-enhancing Tumor Core (NCR/NET)
+  - `2` – Peritumoral Edema (ED)
+  - `4` – Enhancing Tumor (ET)
+  - `3` – Not used
+- For binary segmentation, all non-zero labels were **converted to 1 (tumor)**.
+- Like the input, masks were **sliced and resized to 128 × 128**.
+
+This preprocessing pipeline prepared the dataset for binary segmentation of three separate tumor regions: **Whole Tumor (WT), Tumor Core (TC), and Enhancing Tumor (ET)** — enabling an efficient and accurate 2D ResUNet++ training setup.
 
 
 
